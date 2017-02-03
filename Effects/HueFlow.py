@@ -2,7 +2,7 @@
 
 import time
 
-from PiLightStrip import LightInfo
+import LightInfo
 
 from neopixel import *
 

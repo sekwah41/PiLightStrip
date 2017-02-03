@@ -6,7 +6,7 @@ import sys
 import time
 import numpy as np
 
-from PiLightStrip import LightInfo
+import LightInfo
 
 from neopixel import *
 
