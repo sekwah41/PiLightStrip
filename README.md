@@ -7,3 +7,5 @@ One major issue with this setup is the lights use the audio pins to run, so you 
 
 Will probably make a music/dj system to work with mobile over a web server at some point reusing this code
 
+To run the programs, just alter the file in each folder called LightInfo to be what your system has
+
