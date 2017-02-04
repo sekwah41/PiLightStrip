@@ -37,8 +37,8 @@ def dataToLight(average):
     value = int(average / 30000.0 * LightInfo.LED_COUNT / 2.0 * 2.0)
     if value < 0:
         return 0
-    elif value > LightInfo.LED_COUNT / 2.0 - 1:
-        return LightInfo.LED_COUNT / 2.0
+    elif value > LightInfo.LED_COUNT - 1:
+        return LightInfo.LED_COUNT
     else:
         return value
 
