@@ -34,7 +34,7 @@ def callback(in_data, frame_count, time_info, status):
     return (data, pyaudio.paContinue)
 
 def dataToLight(average):
-    value = int(average / 30000.0 * LightInfo.LED_COUNT / 2.0 * 2.0)
+    value = int(average / 30000.0 * LightInfo.LED_COUNT * 2.0)
     if value < 0:
         return 0
     elif value > LightInfo.LED_COUNT - 1:
