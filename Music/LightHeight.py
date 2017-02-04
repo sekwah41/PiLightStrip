@@ -86,7 +86,7 @@ while stream.is_active():
         levelcolor = dataToLight(average)
         #print levelcolor
         #progress = progress + 1
-        increase = 20 * (levelcolor / LightInfo.LED_COUNT) - 5
+        increase = 20 * (levelcolor / float(LightInfo.LED_COUNT)) - 5
         if increase > 0:
             progress = progress + increase
 
