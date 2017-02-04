@@ -33,7 +33,7 @@ def callback(in_data, frame_count, time_info, status):
     return (data, pyaudio.paContinue)
 
 def dataToLight(average):
-    value = int(average / 30000.0 * 240 * 2)
+    value = int(average / 30000.0 * LightInfo.LED_COUNT * 2)
     if value < 0:
         return 0
     elif value > 239:
@@ -86,14 +86,14 @@ while stream.is_active():
         levelcolor = dataToLight(average)
         #print levelcolor
         #progress = progress + 1
-        increase = 20 * (levelcolor / 240.0) - 5
+        increase = 20 * (levelcolor / LightInfo.LED_COUNT) - 5
         if increase > 0:
             progress = progress + increase
 
         color = wheel(int(progress % 256))
 
         #color = wheel(int (levelcolor / 240.0 * 255.0))
-        for pixel in  range(levelcolor + 1, 240):
+        for pixel in  range(levelcolor + 1, LightInfo.LED_COUNT):
             strip.setPixelColor(pixel,Color(0,0,0))
         for pixel in  range(levelcolor):
             strip.setPixelColor(pixel,color)
