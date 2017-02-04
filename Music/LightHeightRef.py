@@ -87,7 +87,7 @@ while stream.is_active():
         levelcolor = dataToLight(average)
         #print levelcolor
         #progress = progress + 1
-        increase = 20 * (levelcolor / LightInfo.LED_COUNT / 2) - 5
+        increase = 20 * (levelcolor / LightInfo.LED_COUNT) - 5
         if increase > 0:
             progress = progress + increase
 
@@ -96,9 +96,9 @@ while stream.is_active():
         #color = wheel(int (levelcolor / 240.0 * 255.0))
         for pixel in  range(levelcolor + 1, LightInfo.LED_COUNT):
             strip.setPixelColor(pixel,Color(0,0,0))
-        for pixel in  range(levelcolor):
+        for pixel in  range(levelcolor / 2):
             strip.setPixelColor(pixel,color)
-        for pixel in  range(LightInfo.LED_COUNT, levelcolor + LightInfo.LED_COUNT / 2, -1):
+        for pixel in  range(LightInfo.LED_COUNT, LightInfo.LED_COUNT - levelcolor / 2, -1):
             strip.setPixelColor(pixel,color)
         strip.show()
     time.sleep(30.0/1000)
