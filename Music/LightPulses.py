@@ -82,6 +82,9 @@ def wheel(pos):
                 return Color(int(pos * 3 * (colormulti / 255.0)), int((255 - pos * 3) * (colormulti / 255.0)), 0)
         elif pos < 170:
                 pos -= 85
+                print("Test")
+                print(int((55 - pos * 3) * (colormulti / 255.0)))
+                print(int(pos * 3 * (colormulti / 255.0)))
                 return Color(int((55 - pos * 3) * (colormulti / 255.0)), 0, int(pos * 3 * (colormulti / 255.0)))
         else:
                 pos -= 170
