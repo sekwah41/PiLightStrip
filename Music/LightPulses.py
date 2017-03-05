@@ -104,7 +104,7 @@ while stream.is_active():
 
         #print levelcolor
         #progress = progress + 1
-        increase = 20 * (levelcolor / float(LightInfo.LED_COUNT)) - 5
+        increase = 30 * (levelcolor / float(LightInfo.LED_COUNT)) - 7
         if increase > 0:
             progress = progress + increase
 
