@@ -100,7 +100,7 @@ while stream.is_active():
         #print average
         levelcolor = dataToLight(average)
 
-        #progtime = progtime + 1
+        progtime = progtime + 1
 
         #print levelcolor
         #progress = progress + 1
@@ -111,10 +111,9 @@ while stream.is_active():
         #color = wheel(int (levelcolor / 240.0 * 255.0))
         for pixel in  range(LightInfo.LED_COUNT):
             colormulti = intense(int(progress + (pixel * 8.0)) % 256)
-            print(colormulti)
             if colormulti < 0:
                 colormulti = 0
-            color = wheel(int(progtime % 256))
+            color = wheel(int(progtime % 255))
             strip.setPixelColor(pixel,color)
         strip.show()
     time.sleep(30.0/1000)
