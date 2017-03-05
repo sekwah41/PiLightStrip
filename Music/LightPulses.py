@@ -61,16 +61,31 @@ datareduce = 3
 
 progress = 0
 
+colormulti = 0
+
+progtime = 0
+
+def intense(pos):
+        """Generate rainbow colors across 0-255 positions."""
+        if pos < 85:
+                return 0
+        elif pos < 170:
+                pos -= 85
+                return pos * 3
+        else:
+                pos -= 170
+                return 255 - pos * 3
+
 def wheel(pos):
         """Generate rainbow colors across 0-255 positions."""
         if pos < 85:
-                return Color(pos * 3, 255 - pos * 3, 0)
+                return Color(int(pos * 3 * (colormulti / 255.0)), int(255 - pos * 3 * (colormulti / 255.0)), 0)
         elif pos < 170:
                 pos -= 85
-                return Color(255 - pos * 3, 0, pos * 3)
+                return Color(int(55 - pos * 3 * (colormulti / 255.0)), 0, int(pos * 3 * (colormulti / 255.0)))
         else:
                 pos -= 170
-                return Color(0, pos * 3, 255 - pos * 3)
+                return Color(0, int(pos * 3 * (colormulti / 255.0)), int((255 - pos * 3) * (colormulti / 255.0)))
 
 while stream.is_active():
     #print datasamp
@@ -84,8 +99,12 @@ while stream.is_active():
         average = average / (len(datasamp) / datareduce)
         #print average
         levelcolor = dataToLight(average)
+
+        progtime = progtime + 0.1
+
         #print levelcolor
         #progress = progress + 1
+        colormulti = intense(progress)
         increase = 20 * (levelcolor / float(LightInfo.LED_COUNT)) - 5
         if increase > 0:
             progress = progress + increase
