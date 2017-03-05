@@ -100,7 +100,7 @@ while stream.is_active():
         #print average
         levelcolor = dataToLight(average)
 
-        progtime = progtime + 0.1
+        progtime = progtime + 1
 
         #print levelcolor
         #progress = progress + 1
