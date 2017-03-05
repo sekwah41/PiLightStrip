@@ -111,7 +111,7 @@ while stream.is_active():
 
         #color = wheel(int (levelcolor / 240.0 * 255.0))
         for pixel in  range(LightInfo.LED_COUNT):
-            colormulti = int(intense(progress + pixel * 8))
+            colormulti = int(intense(progress + (pixel * 8.0)))
             if colormulti < 0:
                 colormulti = 0
             color = wheel(int(progtime % 256))
