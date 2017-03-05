@@ -113,7 +113,8 @@ while stream.is_active():
             colormulti = intense(int(progress + (pixel * 8.0)) % 256)
             if colormulti < 0:
                 colormulti = 0
-            color = wheel(int(progtime % 255))
+            color = wheel(int(progtime % 256))
+            print(int(progtime % 256))
             strip.setPixelColor(pixel,color)
         strip.show()
     time.sleep(30.0/1000)
