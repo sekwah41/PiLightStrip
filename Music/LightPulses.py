@@ -105,6 +105,7 @@ while stream.is_active():
         #print levelcolor
         #progress = progress + 1
         colormulti = intense(progress)
+        print(colormulti)
         increase = 20 * (levelcolor / float(LightInfo.LED_COUNT)) - 5
         if increase > 0:
             progress = progress + increase
