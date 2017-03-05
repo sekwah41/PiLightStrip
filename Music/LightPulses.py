@@ -111,7 +111,7 @@ while stream.is_active():
 
         #color = wheel(int (levelcolor / 240.0 * 255.0))
         for pixel in  range(LightInfo.LED_COUNT):
-            color = wheel(int((progress + (pixel * 8)) % 256))
+            color = wheel(int(progtime % 256))
             strip.setPixelColor(pixel,color)
         strip.show()
     time.sleep(30.0/1000)
