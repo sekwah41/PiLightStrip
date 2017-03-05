@@ -83,7 +83,7 @@ def wheel(pos):
         elif pos < 170:
                 pos -= 85
                 print("Test")
-                print(int((55 - pos * 3) * (colormulti / 255.0)))
+                print(int((255 - pos * 3) * (colormulti / 255.0)))
                 print(int(pos * 3 * (colormulti / 255.0)))
                 return Color(int((55 - pos * 3) * (colormulti / 255.0)), 0, int(pos * 3 * (colormulti / 255.0)))
         else:
@@ -117,7 +117,7 @@ while stream.is_active():
             if colormulti < 0:
                 colormulti = 0
             color = wheel(int(progtime % 256))
-            #print(int(progtime % 256))
+            print(int(progtime % 256))
             strip.setPixelColor(pixel,color)
         strip.show()
     time.sleep(30.0/1000)
