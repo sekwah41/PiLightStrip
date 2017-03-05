@@ -79,13 +79,13 @@ def intense(pos):
 def wheel(pos):
         """Generate rainbow colors across 0-255 positions."""
         if pos < 85:
-                return Color(int(pos * 3 * (colormulti / 255.0)), int(255 - pos * 3 * (colormulti / 256.0)), 0)
+                return Color(int(pos * 3 * (colormulti / 256.0)), int(255 - pos * 3 * (colormulti / 256.0)), 0)
         elif pos < 170:
                 pos -= 85
-                return Color(int(55 - pos * 3 * (colormulti / 255.0)), 0, int(pos * 3 * (colormulti / 256.0)))
+                return Color(int(55 - pos * 3 * (colormulti / 256.0)), 0, int(pos * 3 * (colormulti / 256.0)))
         else:
                 pos -= 170
-                return Color(0, int(pos * 3 * (colormulti / 255.0)), int((255 - pos * 3) * (colormulti / 256.0)))
+                return Color(0, int(pos * 3 * (colormulti / 256.0)), int((255 - pos * 3) * (colormulti / 256.0)))
 
 while stream.is_active():
     #print datasamp
@@ -104,7 +104,6 @@ while stream.is_active():
 
         #print levelcolor
         #progress = progress + 1
-        print(colormulti)
         increase = 20 * (levelcolor / float(LightInfo.LED_COUNT)) - 5
         if increase > 0:
             progress = progress + increase
@@ -112,6 +111,7 @@ while stream.is_active():
         #color = wheel(int (levelcolor / 240.0 * 255.0))
         for pixel in  range(LightInfo.LED_COUNT):
             colormulti = intense(progress + (pixel * 8.0))
+            print(colormulti)
             if colormulti < 0:
                 colormulti = 0
             color = wheel(int(progtime % 256))
