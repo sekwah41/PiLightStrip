@@ -79,13 +79,13 @@ def intense(pos):
 def wheel(pos):
         """Generate rainbow colors across 0-255 positions."""
         if pos < 85:
-                return Color(int(pos * 3 * (colormulti / 256.0)), int((255 - pos * 3) * (colormulti / 256.0)), 0)
+                return Color(int(pos * 3 * (colormulti / 255.0)), int((255 - pos * 3) * (colormulti / 255.0)), 0)
         elif pos < 170:
                 pos -= 85
-                return Color(int(55 - pos * 3 * (colormulti / 256.0)), 0, int(pos * 3 * (colormulti / 256.0)))
+                return Color(int(55 - pos * 3 * (colormulti / 255.0)), 0, int(pos * 3 * (colormulti / 255.0)))
         else:
                 pos -= 170
-                return Color(0, int(pos * 3 * (colormulti / 256.0)), int((255 - pos * 3) * (colormulti / 256.0)))
+                return Color(0, int(pos * 3 * (colormulti / 255.0)), int((255 - pos * 3) * (colormulti / 255.0)))
 
 while stream.is_active():
     #print datasamp
