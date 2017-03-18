@@ -2,6 +2,7 @@ import pyaudio
 import numpy as np
 import decoder
 import sys
+import time
 #import pylab
 import time
 
@@ -58,13 +59,13 @@ datareduce = 3
 
 progress = 0
 
-dc = decoder.open(sys.argv[1])
+//dc = decoder.open(sys.argv[1])
 
 def callback(in_data, frame_count, time_info, status):
     global datasamp
-    data = dc.readframes(frame_count)
-    datasamp = np.fromstring(data,dtype=np.int16)
-    return (data, pyaudio.paContinue)
+    print(in_data)
+    #datasamp = np.fromstring(data,dtype=np.int16)
+    #return (data, pyaudio.paContinue)
 
 if __name__ == "__main__":
     # Create NeoPixel object with appropriate configuration.
