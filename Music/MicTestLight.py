@@ -57,7 +57,7 @@ if __name__ == "__main__":
     strip.begin()
 
     p=pyaudio.PyAudio()
-    stream=p.open(format=pyaudio.paInt16,channels=1, input_device_index=1,rate=RATE,input=True,
+    stream=p.open(format=pyaudio.paInt16,channels=2, input_device_index=1,rate=RATE,input=True,
                   frames_per_buffer=CHUNK)
     #for i in range(int(20*RATE/CHUNK)): #do this for 10 seconds
     while True:
