@@ -59,7 +59,7 @@ datareduce = 3
 
 progress = 0
 
-//dc = decoder.open(sys.argv[1])
+#dc = decoder.open(sys.argv[1])
 
 def callback(in_data, frame_count, time_info, status):
     global datasamp
