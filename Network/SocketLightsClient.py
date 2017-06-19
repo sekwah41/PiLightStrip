@@ -33,8 +33,8 @@ frames = []
 looping = True
 
 #network stuff
-soc = socket.socket()
-host = "localhost"  # Get local machine name
+soc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+host = "192.168.43.110"  # Get local machine name
 port = 6969  # Reserve a port for your service.
 soc.bind((host, port))  # Bind to the port
 soc.listen(5)  # Now wait for client connection.

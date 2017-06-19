@@ -26,7 +26,7 @@ progress = 0
 
 
 soc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)         # Create a socket object
-host = sys.argv[0] # Get local machine name
+host = sys.argv[1] # Get local machine name
 port = 6969                # Reserve a port for your service.
 
 
