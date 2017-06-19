@@ -47,7 +47,7 @@ while True:
    while looping:
        # print outData
        try:
-           print len(outData)
+           #print len(outData)
            c.send(outData)
        except socket_error as serr:
            print serr.errno

@@ -60,7 +60,7 @@ while True:
         average = 0
         #for i in range(0,len(data), datareduce):
         for i in range(0,1024, datareduce):
-            #print i
+            print i
             if data[i] < 0:
                 data[i] = -data[i]
             average = average + data[i]
