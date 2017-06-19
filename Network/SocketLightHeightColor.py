@@ -22,8 +22,6 @@ strip.begin()
 
 datareduce = 5
 
-progress = 0
-
 
 
 soc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)         # Create a socket object
@@ -68,11 +66,8 @@ while True:
         levelcolor = dataToLight(average)
         #print levelcolor
         #progress = progress + 1
-        increase = 20 * (levelcolor / float(LightInfo.LED_COUNT)) - 5
-        if increase > 0:
-            progress = progress + increase
 
-        color = wheel(int(progress % 256))
+        color = wheel(int(int(sys.argv[2]) % 256))
 
         #color = wheel(int (levelcolor / 240.0 * 255.0))
         for pixel in  range(levelcolor + 1, LightInfo.LED_COUNT):
