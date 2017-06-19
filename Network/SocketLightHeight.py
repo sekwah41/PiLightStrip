@@ -58,9 +58,10 @@ while True:
     #datasamp = np.fromstring(data,dtype=np.int16)
     if len(data):
         average = 0
+        print len(data)
         #for i in range(0,len(data), datareduce):
         for i in range(0,1024, datareduce):
-            print i
+            #print i
             if data[i] < 0:
                 data[i] = -data[i]
             average = average + data[i]
