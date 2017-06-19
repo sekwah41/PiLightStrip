@@ -38,6 +38,7 @@ host = "localhost"  # Get local machine name
 port = 6969  # Reserve a port for your service.
 soc.bind((host, port))  # Bind to the port
 soc.listen(5)  # Now wait for client connection.
+print "Waiting for connection"
 while True:
    c, addr = soc.accept()     # Establish connection with client.
    print 'Got connection from', addr
