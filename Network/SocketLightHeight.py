@@ -20,7 +20,7 @@ strip = Adafruit_NeoPixel(LightInfo.LED_COUNT, LightInfo.LED_PIN, LightInfo.LED_
 # Intialize the library (must be called once before other functions).
 strip.begin()
 
-datareduce = 3
+datareduce = 2
 
 progress = 0
 
@@ -58,14 +58,12 @@ while True:
     #datasamp = np.fromstring(data,dtype=np.int16)
     if len(data):
         average = 0
-        print len(data)
-        #for i in range(0,len(data), datareduce):
-        for i in range(0,1024, datareduce):
+        for i in range(0,len(data), datareduce):
             #print i
             if data[i] < 0:
                 data[i] = -data[i]
             average = average + data[i]
-        average = average / (len(data) / datareduce)
+        average = average / (len(data) / datareduce) * 2
         #print average
         levelcolor = dataToLight(average)
         #print levelcolor
