@@ -70,7 +70,11 @@ while True:
         #progress = progress + 1
         increase = 20 * (levelcolor / float(LightInfo.LED_COUNT)) - 5
         if increase > 9:
-            increase = 9
+            increase = increase - 9
+            increase = increase / 2.0
+            increase = increase + 9
+        if increase > 14:
+            increase = 14
         if increase > 0:
             progress = progress + increase
 
