@@ -81,6 +81,8 @@ while stream.is_active():
             if datasamp[i] < 0:
                 datasamp[i] = -datasamp[i]
             average = average + datasamp[i]
+        print type(datasamp)
+        print type(datasamp[0])
         average = average / (len(datasamp) / datareduce)
         #print average
         levelcolor = dataToLight(average)
