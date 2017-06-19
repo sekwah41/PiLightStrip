@@ -63,7 +63,7 @@ while True:
             if data[i] < 0:
                 data[i] = -data[i]
             average = average + data[i]
-        average = average / (len(data) / datareduce) * 2.3
+        average = average / (len(data) / datareduce) * 21
         #print average
         levelcolor = dataToLight(average)
         #print levelcolor
