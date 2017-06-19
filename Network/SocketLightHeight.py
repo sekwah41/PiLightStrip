@@ -81,7 +81,7 @@ while True:
         color = wheel(int(progress % 256))
 
         #color = wheel(int (levelcolor / 240.0 * 255.0))
-        for pixel in  range(levelcolor + 1, LightInfo.LED_COUNT):
+        for pixel in  range(levelcolor, LightInfo.LED_COUNT):
             strip.setPixelColor(pixel,Color(0,0,0))
         for pixel in  range(levelcolor):
             strip.setPixelColor(pixel,color)
