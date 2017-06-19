@@ -5,6 +5,7 @@ import sys
 import socket
 
 import LightInfo
+import numpy as np
 
 from neopixel import *
 
@@ -53,7 +54,8 @@ def wheel(pos):
 
 soc.connect((host, port))
 while True:
-    data = soc.recv(1024 * 8)
+    data = np.fromstring(soc.recv(1024 * 8),dtype=np.int16)
+    #datasamp = np.fromstring(data,dtype=np.int16)
     if len(data):
         average = 0
         for i in range(0,len(data), datareduce):

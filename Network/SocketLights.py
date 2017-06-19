@@ -5,6 +5,7 @@ import sys
 import socket
 
 import LightInfo
+import numpy as np
 
 from neopixel import *
 
