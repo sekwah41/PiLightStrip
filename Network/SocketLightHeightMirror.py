@@ -83,9 +83,9 @@ while True:
         # color = wheel(int (levelcolor / 240.0 * 255.0))
         for pixel in range(LightInfo.LED_COUNT):
             strip.setPixelColor(pixel, Color(0, 0, 0))
-        for pixel in range(int(levelcolor / 2.0) + 1):
+        for pixel in range(int(levelcolor / 2.0)):
             strip.setPixelColor(pixel, color)
-        for pixel in range(LightInfo.LED_COUNT, int(LightInfo.LED_COUNT - levelcolor / 2.0) + 1, -1):
+        for pixel in range(LightInfo.LED_COUNT, int(LightInfo.LED_COUNT - levelcolor / 2.0), -1):
             strip.setPixelColor(pixel, color)
         strip.show()
 soc.close()
