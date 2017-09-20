@@ -32,7 +32,7 @@ port = 6969                # Reserve a port for your service.
 
 
 def dataToLight(average):
-    value = int(average / 30000.0 * LightInfo.LED_COUNT * 2)
+    value = int(average / 30000.0 * (LightInfo.LED_COUNT * 2 + 2))
     if value < 0:
         return 0
     elif value > LightInfo.LED_COUNT - 1:
