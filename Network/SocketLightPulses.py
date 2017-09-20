@@ -86,7 +86,7 @@ while True:
             average = average + data[i]
         average = average / (len(data) / datareduce)
         #print average
-        levelcolor = dataToLight(average)
+        levelcolor = dataToLight(average * 2)
 
         progtime = progtime + 1
 
