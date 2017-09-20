@@ -44,7 +44,7 @@ strip = Adafruit_NeoPixel(LightInfo.LED_COUNT, LightInfo.LED_PIN, LightInfo.LED_
 # Intialize the library (must be called once before other functions).
 strip.begin()
 
-datareduce = 3
+datareduce = 2
 
 progress = 0
 
