@@ -22,6 +22,7 @@ Speakers (Generally computer speakers come with a male to male, just make sure y
 
 Raspberry Pi V3 (prefferably, should work on any with the 40 pin connector or any type of GPIO pins that accept PWM0)
 
+OH ALSO INSTALL PYAUDIO THATS IMPORTANT
 
 
 Note:
