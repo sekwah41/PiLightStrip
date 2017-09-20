@@ -22,6 +22,10 @@ strip.begin()
 
 datareduce = 5
 
+progress = 0
+
+
+
 soc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)         # Create a socket object
 host = sys.argv[1] # Get local machine name
 port = 6969                # Reserve a port for your service.
@@ -64,14 +68,25 @@ while True:
         levelcolor = dataToLight(average)
         #print levelcolor
         #progress = progress + 1
+        increase = 20 * (levelcolor / float(LightInfo.LED_COUNT)) - 5
+        if increase > 9:
+            increase = increase - 9
+            increase = increase / 2.0
+            increase = increase + 9
+        if increase > 14:
+            increase = 14
+        if increase > 0:
+            progress = progress + increase
 
-        color = wheel(int(int(sys.argv[2]) % 256))
+        color = wheel(int(progress % 256))
 
-        #color = wheel(int (levelcolor / 240.0 * 255.0))
-        for pixel in  range(levelcolor + 1, LightInfo.LED_COUNT):
-            strip.setPixelColor(pixel,Color(0,0,0))
-        for pixel in  range(levelcolor):
-            strip.setPixelColor(pixel,color)
+        # color = wheel(int (levelcolor / 240.0 * 255.0))
+        for pixel in range(LightInfo.LED_COUNT):
+            strip.setPixelColor(pixel, Color(0, 0, 0))
+        for pixel in range(int(levelcolor / 2.0) + 1):
+            strip.setPixelColor(pixel, color)
+        for pixel in range(LightInfo.LED_COUNT, int(LightInfo.LED_COUNT - levelcolor / 2.0), -1):
+            strip.setPixelColor(pixel, color)
         strip.show()
 soc.close()
 
