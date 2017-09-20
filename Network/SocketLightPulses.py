@@ -86,13 +86,13 @@ while True:
             average = average + data[i]
         average = average / (len(data) / datareduce)
         #print average
-        levelcolor = dataToLight(average * 2)
+        levelcolor = dataToLight(average)
 
         progtime = progtime + 1
 
         #print levelcolor
         #progress = progress + 1
-        increase = 30 * (levelcolor / float(LightInfo.LED_COUNT)) - 9
+        increase = 40 * (levelcolor / float(LightInfo.LED_COUNT)) - 7
         if increase > 0:
             progress = progress + increase
 
