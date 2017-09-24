@@ -26,6 +26,6 @@ if __name__ == '__main__':
     while True:
         for progress in range(256):
             for pixel in range(LightInfo.LED_COUNT):
-                strip.setPixelColor(pixel, wheel(progress + int(pixel * 0.4)))
+                strip.setPixelColor(pixel, wheel(progress + int(pixel * 4)))
             strip.show()
             time.sleep(30/1000.0)
