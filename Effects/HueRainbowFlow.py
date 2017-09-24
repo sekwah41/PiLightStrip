@@ -8,7 +8,7 @@ from neopixel import *
 
 
 def wheel(pos):
-    pos = pos % 255
+    pos = pos % 256
     if pos < 85:
         return Color(pos * 3, 255 - pos * 3, 0)
     elif pos < 170:
