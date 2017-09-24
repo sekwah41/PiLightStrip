@@ -9,13 +9,13 @@ from neopixel import *
 
 def wheel(pos):
     if pos < 85:
-        return Color(pos * 3, 255 - pos * 3, 0)
+        return Color(int(pos * 3), int(255 - pos * 3), 0)
     elif pos < 170:
         pos -= 85
-        return Color(255 - pos * 3, 0, pos * 3)
+        return Color(int(255 - pos * 3), 0, int(pos * 3))
     else:
         pos -= 170
-        return Color(0, pos * 3, 255 - pos * 3)
+        return Color(0, int(pos * 3), int(255 - pos * 3))
 
 if __name__ == '__main__':
     strip = Adafruit_NeoPixel(LightInfo.LED_COUNT, LightInfo.LED_PIN, LightInfo.LED_FREQ_HZ, LightInfo.LED_DMA, LightInfo.LED_INVERT, LightInfo.LED_BRIGHTNESS)
